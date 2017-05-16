@@ -14,6 +14,10 @@ const AppStyles = StyleSheet.create({
         alignItems: 'center',
     },
 
+    justifyContentCenter: {
+        justifyContent: 'center'
+    },
+
     errorColor: {
         color: config.colors.error
     }
