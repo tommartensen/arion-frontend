@@ -23,7 +23,7 @@ before_script:
 
 script:
     - scripts/sonarqube.sh
-    - npm build
+    - npm run build
 
 notifications:
     email: false
