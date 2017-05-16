@@ -18,6 +18,7 @@ install:
     - npm install
 
 before_script:
+    - mv src/config/config-template.js src/config/config.js
     - chmod +x scripts/sonarqube.sh
 
 script:
