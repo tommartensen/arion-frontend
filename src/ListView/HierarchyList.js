@@ -28,6 +28,6 @@ class HierarchyList extends ConnectionComponent {
         );
     }
 }
-export default connect.defaults({fetch: ConnectionComponent.switchFetch})(props => ({
+export default connect.defaults({fetch: ConnectionComponent.switchFetch})(() => ({
     hierarchies: config.backendRESTRoute + `/api/hierarchy/esper`
 }))(HierarchyList);
