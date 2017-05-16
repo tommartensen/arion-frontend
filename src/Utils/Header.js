@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {AppBar, IconButton} from "material-ui";
 import IconHome from "material-ui/svg-icons/action/home";
 import IconArrowBack from "material-ui/svg-icons/navigation/arrow-back";
-import config from "../config/config-template";
+import config from "../config/config";
 
 class Header extends Component {
     static buildAppBar(isHome) {
