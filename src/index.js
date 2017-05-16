@@ -6,23 +6,26 @@ import ListView from "./ListView/ListView";
 import DetailView from "./DetailView/DetailView";
 import NotFound from "./Utils/NotFound";
 import Header from "./Utils/Header";
+import {Container} from "react-grid-system";
 
 ReactDOM.render(
     <Router>
         <App>
             <div>
                 <Header/>
-                <Switch>
-                    <Route
-                        exact path="/"
-                        component={ListView}/>
-                    <Route
-                        path="/details/:hierarchyId"
-                        component={DetailView}/>
-                    <Route
-                        path="*"
-                        component={NotFound}/>
-                </Switch>
+                <Container style={{marginTop: "30px"}}>
+                    <Switch>
+                        <Route
+                            exact path="/"
+                            component={ListView}/>
+                        <Route
+                            path="/details/:hierarchyId"
+                            component={DetailView}/>
+                        <Route
+                            path="*"
+                            component={NotFound}/>
+                    </Switch>
+                </Container>
             </div>
         </App>
     </Router>,
