@@ -7,7 +7,17 @@ import ConnectionComponent from "../Utils/ConnectionComponent";
 import config from "../config/config";
 
 class HierarchyList extends ConnectionComponent {
-   render() {
+    static renderDetailButton(hierarchyId) {
+        return (
+            <IconButton
+                tooltip={config.descriptions.toolTipToDetailView}
+                href={"details/" + hierarchyId}>
+                <IconSearch/>
+            </IconButton>
+        );
+    }
+
+    render() {
        const connectionIncomplete = super.render(PromiseState.all([this.props.hierarchies]));
        if (connectionIncomplete) {
            return connectionIncomplete;
@@ -21,7 +31,7 @@ class HierarchyList extends ConnectionComponent {
                             key={hierarchy.id}
                             primaryText={hierarchy.name}
                             secondaryText={"Created on " + Utils.parseTimestamp(hierarchy.timestamp)}
-                            rightIconButton={<IconButton href={"details/" + hierarchy.id}><IconSearch/></IconButton>}/>;
+                            rightIconButton={HierarchyList.renderDetailButton(hierarchy.id)}/>;
                     })
                 }
             </List>
