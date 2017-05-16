@@ -16,7 +16,9 @@ const config = {
         diagramBackground: "rgba(224, 224, 224, 0.6)",
         error: "#B71C1C",
     },
-    descriptions: {},
+    descriptions: {
+        toolTipToDetailView: "See Event Query Hierarchy",
+    },
     messages: {},
 };
 
