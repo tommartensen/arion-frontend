@@ -1,10 +1,13 @@
-import Hierarchy from "./MockData/Hierarchy";
 import config from "../config/config";
+import Hierarchies from "./MockData/Hierarchies";
+import Hierarchy from "./MockData/Hierarchy";
+
 class BackendMock {
 
     static getRouteMapper() {
         return new Map()
-            .set(/^\/api\/hierarchy\/esper$/i, BackendMock.getEsperHierarchies);
+            .set(/^\/api\/hierarchy\/esper$/i, BackendMock.getEsperHierarchies)
+            .set(/^\/api\/hierarchy\/esper\/(-?\d+)$/i, BackendMock.getEsperHierarchyById)
     }
 
     static handleRequest(request) {
@@ -24,6 +27,10 @@ class BackendMock {
     }
 
     static getEsperHierarchies() {
+        return Hierarchies;
+    }
+
+    static getEsperHierarchyById() {
         return Hierarchy;
     }
 
