@@ -12,7 +12,7 @@ import HierarchyView from "./HierarchyView";
 
 class DetailView extends ConnectionComponent {
     render() {
-        const connectionIncomplete = super.render(PromiseState.all(this.props.hierarchy));
+        const connectionIncomplete = super.render(PromiseState.all([this.props.hierarchy]));
         if (connectionIncomplete) {
             return connectionIncomplete;
         }
