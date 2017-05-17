@@ -1,6 +1,15 @@
 import React from "react";
 
 class Utils {
+    static getDateTime(timestamp) {
+        return (
+            "Created on "
+            + Utils.parseDateFromTimestamp(timestamp)
+            + " at "
+            + Utils.parseTimeFromTimestamp(timestamp)
+        );
+    }
+
     static parseDateFromTimestamp(timestamp) {
         return timestamp.split("T")[0];
     }
