@@ -20,6 +20,14 @@ const AppStyles = StyleSheet.create({
 
     errorColor: {
         color: config.colors.error
+    },
+
+    fontWeightBold: {
+        fontWeight: 700
+    },
+
+    marginTop30: {
+        marginTop: "30px"
     }
 });
 

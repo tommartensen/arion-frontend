@@ -30,7 +30,7 @@ class HierarchyList extends ConnectionComponent {
                         return <ListItem
                             key={hierarchy.id}
                             primaryText={hierarchy.name}
-                            secondaryText={"Created on " + Utils.parseTimestamp(hierarchy.timestamp)}
+                            secondaryText={Utils.getDateTime(hierarchy.timestamp)}
                             rightIconButton={HierarchyList.renderDetailButton(hierarchy.id)}/>;
                     })
                 }
