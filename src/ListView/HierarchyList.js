@@ -7,6 +7,15 @@ import ConnectionComponent from "../Utils/ConnectionComponent";
 import config from "../config/config";
 
 class HierarchyList extends ConnectionComponent {
+    static getDateTime(timestamp) {
+        return (
+            "Created on "
+            + Utils.parseDateFromTimestamp(timestamp)
+            + " at "
+            + Utils.parseTimeFromTimestamp(timestamp)
+        );
+    }
+
     static renderDetailButton(hierarchyId) {
         return (
             <IconButton
@@ -30,7 +39,7 @@ class HierarchyList extends ConnectionComponent {
                         return <ListItem
                             key={hierarchy.id}
                             primaryText={hierarchy.name}
-                            secondaryText={"Created on " + Utils.parseTimestamp(hierarchy.timestamp)}
+                            secondaryText={HierarchyList.getDateTime(hierarchy.timestamp)}
                             rightIconButton={HierarchyList.renderDetailButton(hierarchy.id)}/>;
                     })
                 }

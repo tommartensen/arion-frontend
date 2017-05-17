@@ -12,7 +12,7 @@ import HierarchyView from "./HierarchyView";
 
 class DetailView extends ConnectionComponent {
     render() {
-        const connectionIncomplete = super.render(PromiseState.all([this.props.hierarchy]));
+        const connectionIncomplete = super.render(PromiseState.all(this.props.hierarchy));
         if (connectionIncomplete) {
             return connectionIncomplete;
         }
@@ -26,15 +26,17 @@ class DetailView extends ConnectionComponent {
                     </Col>
                     <Col md={6}>
                         <Card>
-                            <CardTitle className={css(AppStyles.fontWeightBold)}>JSON Representation</CardTitle>
+                            <CardTitle className={css(AppStyles.fontWeightBold)} >
+                                JSON Representation
+                            </CardTitle>
                             <CardText>
                                 {Utils.prettyPrintJSON(hierarchy.hierarchy)}
                             </CardText>
                         </Card>
                     </Col>
                 </Row>
-                <Row className={css(AppStyles.marginTop30)}>
-                    <HierarchyView hierarchy={hierarchy.hierarchy}/>
+                <Row className={css(AppStyles.marginTop30)} >
+                    <HierarchyView hierarchy={hierarchy.hierarchy} />
                 </Row>
             </div>);
     }

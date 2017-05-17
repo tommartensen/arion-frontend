@@ -1,10 +1,13 @@
 import React from "react";
 
 class Utils {
-    static parseTimestamp(timestamp) {
-        const date = timestamp.split("T")[0];
+    static parseDateFromTimestamp(timestamp) {
+        return timestamp.split("T")[0];
+    }
+
+    static parseTimeFromTimestamp(timestamp) {
         const time = timestamp.split("T")[1];
-        return date + " at " + time.split(".")[0]
+        return time.split(".")[0];
     }
 
     static prettyPrintJSON(object) {
