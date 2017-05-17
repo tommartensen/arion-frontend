@@ -7,8 +7,11 @@ class HierarchyAttributeList extends Component {
         return (
             <List>
                 <ListItem
-                    primaryText={"Created at: "}
-                    secondaryText={Utils.parseTimestamp(this.props.hierarchy.timestamp)}
+                    primaryText={"Created on: "}
+                    secondaryText={
+                        Utils.parseDateFromTimestamp(this.props.hierarchy.timestamp)
+                        + ", "
+                        + Utils.parseTimeFromTimestamp(this.props.hierarchy.timestamp)}
                 />
             </List>
         );
