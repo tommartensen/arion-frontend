@@ -18,11 +18,12 @@ install:
     - npm install
 
 before_script:
+    - mv src/config/config-template.js src/config/config.js
     - chmod +x scripts/sonarqube.sh
 
 script:
     - scripts/sonarqube.sh
-    - npm build
+    - npm run build
 
 notifications:
     email: false
