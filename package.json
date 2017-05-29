@@ -5,15 +5,16 @@
   "license": "MIT",
   "dependencies": {
     "aphrodite": "^1.2.0",
+    "envsub": "^3.1.0",
     "material-ui": "^0.18.1",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
+    "react-graph-vis": "^0.1.1",
     "react-grid-system": "^2.9.0",
     "react-refetch": "^1.0.0",
     "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
-    "serve": "^5.1.4",
-    "envsub": "^3.1.0"
+    "serve": "^5.1.4"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
