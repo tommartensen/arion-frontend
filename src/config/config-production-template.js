@@ -1,6 +1,5 @@
 const config = {
     projectName: "Arion EQMN Modeler",
-    useBackendMock: false,
     backendRESTRoute: "${HOST}",
     colors: {
         primaryDark: "#33691E",
