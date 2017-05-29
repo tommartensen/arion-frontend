@@ -10,7 +10,7 @@ class HierarchyList extends ConnectionComponent {
     static renderDetailButton(hierarchyId) {
         return (
             <IconButton
-                tooltip={config.descriptions.toolTipToDetailView}
+                tooltip={config.descriptions.toolTipToHierarchyDetailView}
                 href={"details/" + hierarchyId}>
                 <IconSearch/>
             </IconButton>
@@ -31,6 +31,7 @@ class HierarchyList extends ConnectionComponent {
                             key={hierarchy.id}
                             primaryText={hierarchy.name}
                             secondaryText={Utils.getDateTime(hierarchy.timestamp)}
+                            disabled={true}
                             rightIconButton={HierarchyList.renderDetailButton(hierarchy.id)}/>;
                     })
                 }

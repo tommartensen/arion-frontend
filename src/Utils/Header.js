@@ -4,6 +4,8 @@ import {AppBar, IconButton} from "material-ui";
 import IconHome from "material-ui/svg-icons/action/home";
 import IconArrowBack from "material-ui/svg-icons/navigation/arrow-back";
 import config from "../config/config";
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 class Header extends Component {
     static buildAppBar(isHome) {
