@@ -1,22 +1,23 @@
 import React from "react";
 import {Col, Row} from "react-grid-system";
-import {Card, CardText, CardTitle} from "material-ui";
 import { css } from 'aphrodite';
 import {connect, PromiseState} from "react-refetch";
 import ConnectionComponent from "../Utils/ConnectionComponent";
 import config from "../config/config";
-import Utils from "../Utils/Utils";
 import HierarchyAttributeList from "./HierarchyAttributeList";
 import AppStyles from "../AppStyles";
-import HierarchyView from "./HierarchyView";
+import EventTypeList from "./EventTypeList";
+import EventQueryList from "./EventQueryList";
+import HierarchyGraph from "./HierarchyGraph";
 
 class DetailView extends ConnectionComponent {
     render() {
-        const connectionIncomplete = super.render(PromiseState.all([this.props.hierarchy]));
+        const connectionIncomplete = super.render(PromiseState.all([this.props.hierarchy, this.props.eventTypes]));
         if (connectionIncomplete) {
             return connectionIncomplete;
         }
         const hierarchy = this.props.hierarchy.value;
+        const eventTypes = this.props.eventTypes.value;
         return (
             <div>
                 <h1>{hierarchy.name}</h1>
@@ -25,23 +26,25 @@ class DetailView extends ConnectionComponent {
                         <HierarchyAttributeList hierarchy={hierarchy} />
                     </Col>
                     <Col md={6}>
-                        <Card>
-                            <CardTitle className={css(AppStyles.fontWeightBold)} >
-                                JSON Representation
-                            </CardTitle>
-                            <CardText>
-                                {Utils.prettyPrintJSON(hierarchy.hierarchy)}
-                            </CardText>
-                        </Card>
+                        <HierarchyGraph
+                            eventTypes={eventTypes}
+                            hierarchy={hierarchy.hierarchy}
+                        />
                     </Col>
                 </Row>
                 <Row className={css(AppStyles.marginTop30)} >
-                    <HierarchyView hierarchy={hierarchy.hierarchy} />
+                    <Col md={6}>
+                        <EventTypeList eventTypes={eventTypes} />
+                    </Col>
+                    <Col md={6}>
+                        <EventQueryList hierarchyId={hierarchy.id} />
+                    </Col>
                 </Row>
             </div>);
     }
 }
 
 export default connect.defaults({fetch: ConnectionComponent.switchFetch})(props => ({
-    hierarchy: config.backendRESTRoute + `/api/hierarchy/esper/${props.match.params.hierarchyId}`
+    hierarchy: config.backendRESTRoute + `/api/hierarchy/esper/${props.match.params.hierarchyId}`,
+    eventTypes: config.backendRESTRoute + `/api/event_type/esper/hierarchy/${props.match.params.hierarchyId}`
 }))(DetailView);
