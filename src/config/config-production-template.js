@@ -17,7 +17,9 @@ const config = {
         error: "#B71C1C",
     },
     descriptions: {
-        toolTipToDetailView: "See Event Query Hierarchy",
+        toolTipToHierarchyDetailView: "See Hierarchy",
+        tooltipToEventTypeInEQMN: "See EQMN model for Event Type",
+        tooltipToEventQueryInEQMN: "See EQMN model for Event Query"
     },
     messages: {},
 };
