@@ -9,6 +9,8 @@ import NotFound from "./Utils/NotFound";
 import Header from "./Utils/Header";
 import {Container} from "react-grid-system";
 import AppStyles from "./AppStyles";
+import EventQueryView from "./EventQueryView/EventQueryView";
+import EventTypeView from "./EventTypeView/EventTypeView";
 
 ReactDOM.render(
     <Router>
@@ -23,6 +25,12 @@ ReactDOM.render(
                         <Route
                             path="/hierarchy/:hierarchyId"
                             component={HierarchyView}/>
+                        <Route
+                            path="/query/:queryId"
+                            component={EventQueryView}/>
+                        <Route
+                            path="/event_type/:eventTypeId"
+                            component={EventTypeView}/>
                         <Route
                             path="*"
                             component={NotFound}/>
