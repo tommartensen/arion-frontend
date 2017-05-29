@@ -3,7 +3,7 @@ import {Card, CardText, CardTitle} from "material-ui";
 import Graph from 'react-graph-vis'
 import config from "../config/config";
 
-class HierarchyView extends Component {
+class HierarchyGraph extends Component {
     static getNodes(eventTypes) {
         return eventTypes.map((eventType) => {
             return {id: eventType.id, label: eventType.name}
@@ -11,7 +11,7 @@ class HierarchyView extends Component {
     }
 
     static getEdges(hierarchy) {
-        let edges = [];
+        const edges = [];
         Object.keys(hierarchy).forEach(function(from) {
             const targets = hierarchy[from];
             targets.forEach(function(to) {
@@ -58,4 +58,4 @@ class HierarchyView extends Component {
     }
 }
 
-export default HierarchyView;
+export default HierarchyGraph;
