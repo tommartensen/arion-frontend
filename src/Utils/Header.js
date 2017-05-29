@@ -33,7 +33,7 @@ class Header extends Component {
                         exact path="/"
                         render={() => Header.buildAppBar(true)}/>
                     <Route
-                        path="/details/:hierarchyId"
+                        path="/hierarchy/:hierarchyId"
                         render={() => Header.buildAppBar(false)}/>
                     <Route
                         path="*"

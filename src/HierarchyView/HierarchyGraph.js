@@ -12,7 +12,7 @@ class HierarchyView extends Component {
 
     static getEdges(hierarchy) {
         let edges = [];
-        Object.keys(hierarchy).map(function(from) {
+        Object.keys(hierarchy).forEach(function(from) {
             const targets = hierarchy[from];
             targets.forEach(function(to) {
                 edges.push({from: parseInt(from, 10), to: to});
@@ -42,11 +42,7 @@ class HierarchyView extends Component {
             }
         };
 
-        const events = {
-            select: function(event) {
-                const { nodes, edges } = event;
-            },
-        };
+        const events = {};
         return (
             <Card>
                 <CardTitle title={"Graph Representation"} />

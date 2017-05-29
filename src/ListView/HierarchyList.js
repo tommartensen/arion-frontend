@@ -11,7 +11,7 @@ class HierarchyList extends ConnectionComponent {
         return (
             <IconButton
                 tooltip={config.descriptions.toolTipToHierarchyDetailView}
-                href={"details/" + hierarchyId}>
+                href={"/hierarchy/" + hierarchyId}>
                 <IconSearch/>
             </IconButton>
         );
