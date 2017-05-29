@@ -23,8 +23,8 @@ class HierarchyGraph extends Component {
 
     render() {
         const graph = {
-            nodes: HierarchyView.getNodes(this.props.eventTypes),
-            edges: HierarchyView.getEdges(this.props.hierarchy)
+            nodes: HierarchyGraph.getNodes(this.props.eventTypes),
+            edges: HierarchyGraph.getEdges(this.props.hierarchy)
         };
 
         const options = {
