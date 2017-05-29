@@ -36,6 +36,12 @@ class Header extends Component {
                         path="/hierarchy/:hierarchyId"
                         render={() => Header.buildAppBar(false)}/>
                     <Route
+                        path="/query/:queryId"
+                        render={() => Header.buildAppBar(false)}/>
+                    <Route
+                        path="/event_type/:eventTypeId"
+                        render={() => Header.buildAppBar(false)}/>
+                    <Route
                         path="*"
                         render={() => Header.buildAppBar(false)}/>
                 </Switch>
