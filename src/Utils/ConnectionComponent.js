@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import LoadingAnimation from './../Utils/LoadingAnimation';
 import ErrorMessage from './../Utils/ErrorMessage';
-import config from './../config/config.js';
-import BackendMock from './BackendMock.js';
 
 class ConnectionComponent extends Component {
 
@@ -16,13 +14,8 @@ class ConnectionComponent extends Component {
     }
 
     static switchFetch(input, init) {
-        if(config.useBackendMock) {
-            const response = BackendMock.handleRequest(input, init);
-            return new Promise(resolve => resolve(response));
-        } else {
-            const req = new Request(input, init);
-            return fetch(req);
-        }
+        const req = new Request(input, init);
+        return fetch(req);
     }
 }
 export default ConnectionComponent;
