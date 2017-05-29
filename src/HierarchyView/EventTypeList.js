@@ -15,8 +15,7 @@ class EventTypeList extends ConnectionComponent {
         );
     }
 
-    renderEventTypes() {
-        const eventTypes = this.props.eventTypes;
+    static renderEventTypes(eventTypes) {
         return (
             <List>
                 {
@@ -40,7 +39,7 @@ class EventTypeList extends ConnectionComponent {
             <Card>
                 <CardTitle title={"All Event Types in this Hierarchy"}/>
                 <CardText>
-                {this.renderEventTypes()}
+                {EventTypeList.renderEventTypes(this.props.eventTypes)}
                 </CardText>
             </Card>);
     }
