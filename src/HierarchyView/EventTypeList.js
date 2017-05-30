@@ -5,14 +5,18 @@ import config from "../config/config";
 import IconSearch from 'material-ui/svg-icons/action/search';
 
 class EventTypeList extends ConnectionComponent {
-    static renderEventTypeDetailButton(eventTypeId) {
-        return (
-            <IconButton
-                tooltip={config.descriptions.tooltipToEventTypeInEQMN}
-                href={"/event_type/" + eventTypeId}>
-                <IconSearch/>
-            </IconButton>
-        );
+    static renderEventTypeDetailButton(eventType) {
+        if (!eventType.isBasicEventType) {
+            return (
+                <IconButton
+                    tooltip={config.descriptions.tooltipToEventTypeInEQMN}
+                    href={"/event_type/" + eventType.id}
+                >
+                    <IconSearch/>
+                </IconButton>
+
+            );
+        }
     }
 
     static renderEventTypes(eventTypes) {
@@ -25,7 +29,7 @@ class EventTypeList extends ConnectionComponent {
                                 key={key}
                                 primaryText={eventType.name}
                                 disabled={true}
-                                rightIconButton={EventTypeList.renderEventTypeDetailButton(eventType.id)}
+                                rightIconButton={EventTypeList.renderEventTypeDetailButton(eventType)}
                             />
                         );
                     })
