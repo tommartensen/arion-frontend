@@ -40,13 +40,14 @@ class EventTypeView extends ConnectionComponent {
     }
 
     static generateEventTypeModel(eventQueries) {
-        const eqmn_representation = [];
+        const eqmnRepresentation = [];
+        console.log(eventQueries);
         eventQueries.forEach(eventQuery => {
-            eqmn_representation.push(
+            eqmnRepresentation.push(
                 Utils.prettyPrintJSON(
                     {
-                        query: eventQuery.eqmn_representation["input"],
-                        condition: eventQuery.eqmn_representation["condition"]
+                        query: eventQuery.eqmnRepresentation["input"],
+                        condition: eventQuery.eqmnRepresentation["condition"]
                     },
                 )
             );
@@ -54,7 +55,7 @@ class EventTypeView extends ConnectionComponent {
         return (
             <div>
                 {
-                    eqmn_representation.map(representation => {
+                    eqmnRepresentation.map(representation => {
                         return representation;
                     })
                 }
