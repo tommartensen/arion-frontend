@@ -20,3 +20,4 @@ yarn-error.log*
 #IDEA
 .idea/
 *.iml
+public/media/

@@ -48,7 +48,7 @@ class EventQueryView extends ConnectionComponent {
                     </Col>
                 </Row>
                 <Row className={css(AppStyles.marginTop30)}>
-                    <Col md={12}>
+                    <Col md={6}>
                         <Card>
                             <CardTitle title={"EQMN Representation"}/>
                             <CardText>
@@ -56,11 +56,16 @@ class EventQueryView extends ConnectionComponent {
                             </CardText>
                         </Card>
                     </Col>
-                </Row>
-                <Row className={css(AppStyles.marginTop30)}>
-                    <Col md={12}>
+                    <Col md={6}>
                         <Card>
                             <CardTitle title={"EQMN Model"}/>
+                            <CardText>
+                                <img
+                                    src={"/media/query-" + eventQuery.id + ".png"}
+                                    width={"100%"}
+                                    alt={"EQMN Model for Event Query" + eventQuery.id}
+                                />
+                            </CardText>
                         </Card>
                     </Col>
                 </Row>
