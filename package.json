@@ -5,9 +5,11 @@
   "license": "MIT",
   "dependencies": {
     "aphrodite": "^1.2.0",
-    "material-ui": "^0.17.3",
+    "envsub": "^3.1.0",
+    "material-ui": "^0.18.1",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
+    "react-graph-vis": "^0.1.1",
     "react-grid-system": "^2.9.0",
     "react-refetch": "^1.0.0",
     "react-router-dom": "^4.1.1",
@@ -24,6 +26,8 @@
     "eject": "react-scripts eject",
     "coverage": "react-scripts test --env=jsdom --coverage",
     "coveralls": "react-scripts test --env=jsdom --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "serve": "serve -s build"
+    "serve": "serve -s build",
+    "envsub": "envsub src/config/config-production-template.js src/config/config.js",
+    "deploy": "npm run envsub && npm run build && npm run serve"
   }
 }

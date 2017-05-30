@@ -4,6 +4,8 @@ import {AppBar, IconButton} from "material-ui";
 import IconHome from "material-ui/svg-icons/action/home";
 import IconArrowBack from "material-ui/svg-icons/navigation/arrow-back";
 import config from "../config/config";
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 class Header extends Component {
     static buildAppBar(isHome) {
@@ -31,7 +33,13 @@ class Header extends Component {
                         exact path="/"
                         render={() => Header.buildAppBar(true)}/>
                     <Route
-                        path="/details/:hierarchyId"
+                        path="/hierarchy/:hierarchyId"
+                        render={() => Header.buildAppBar(false)}/>
+                    <Route
+                        path="/query/:queryId"
+                        render={() => Header.buildAppBar(false)}/>
+                    <Route
+                        path="/event_type/:eventTypeId"
                         render={() => Header.buildAppBar(false)}/>
                     <Route
                         path="*"
