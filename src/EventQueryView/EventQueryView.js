@@ -34,7 +34,7 @@ class EventQueryView extends ConnectionComponent {
                         <Card>
                             <CardTitle title={"Inserting Event Types"}/>
                             <CardText>
-                                {EventTypeList.renderEventTypes(eventQuery.inserting_types)}
+                                {EventTypeList.renderEventTypes(eventQuery.feedingTypes)}
                             </CardText>
                         </Card>
                     </Col>
@@ -42,18 +42,25 @@ class EventQueryView extends ConnectionComponent {
                         <Card>
                             <CardTitle title={"Output Event Type"}/>
                             <CardText>
-                                {EventTypeList.renderEventTypes([eventQuery.output_type])}
+                                {EventTypeList.renderEventTypes([eventQuery.outputType])}
                             </CardText>
                         </Card>
                     </Col>
                 </Row>
                 <Row className={css(AppStyles.marginTop30)}>
-                    <Col>
+                    <Col md={12}>
                         <Card>
-                            <CardTitle title={"EQMN model"}/>
+                            <CardTitle title={"EQMN Representation"}/>
                             <CardText>
-                                {Utils.prettyPrintJSON(eventQuery.eqmn_representation)}
+                                {Utils.prettyPrintJSON(eventQuery.eqmnRepresentation)}
                             </CardText>
+                        </Card>
+                    </Col>
+                </Row>
+                <Row className={css(AppStyles.marginTop30)}>
+                    <Col md={12}>
+                        <Card>
+                            <CardTitle title={"EQMN Model"}/>
                         </Card>
                     </Col>
                 </Row>
