@@ -41,7 +41,6 @@ class EventTypeView extends ConnectionComponent {
 
     static generateEventTypeModel(eventQueries) {
         const eqmnRepresentation = [];
-        console.log(eventQueries);
         eventQueries.forEach(eventQuery => {
             eqmnRepresentation.push(
                 Utils.prettyPrintJSON(
