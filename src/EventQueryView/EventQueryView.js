@@ -48,12 +48,19 @@ class EventQueryView extends ConnectionComponent {
                     </Col>
                 </Row>
                 <Row className={css(AppStyles.marginTop30)}>
-                    <Col>
+                    <Col md={12}>
                         <Card>
-                            <CardTitle title={"EQMN model"}/>
+                            <CardTitle title={"EQMN Representation"}/>
                             <CardText>
                                 {Utils.prettyPrintJSON(eventQuery.eqmn_representation)}
                             </CardText>
+                        </Card>
+                    </Col>
+                </Row>
+                <Row className={css(AppStyles.marginTop30)}>
+                    <Col md={12}>
+                        <Card>
+                            <CardTitle title={"EQMN Model"}/>
                         </Card>
                     </Col>
                 </Row>
