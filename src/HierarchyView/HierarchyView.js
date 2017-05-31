@@ -9,8 +9,25 @@ import AppStyles from "../AppStyles";
 import EventTypeList from "./EventTypeList";
 import EventQueryList from "./EventQueryList";
 import HierarchyGraph from "./HierarchyGraph";
+import {Card, CardText, CardTitle} from "material-ui";
 
 class HierarchyView extends ConnectionComponent {
+    constructor(props) {
+        super(props);
+        this.hierarchySrc = "/media/Hierarchy.png";
+        this.hierarchyDetailsSrc = "/media/HierarchyDetails.png";
+        this.state = {
+            hierarchyDetails: false
+        }
+    }
+
+    getHierarchyImageSource() {
+        if (this.state.hierarchyDetails) {
+            return this.hierarchyDetailsSrc;
+        }
+        return this.hierarchySrc;
+    }
+
     render() {
         const connectionIncomplete = super.render(PromiseState.all([this.props.hierarchy, this.props.eventTypes]));
         if (connectionIncomplete) {
@@ -32,12 +49,29 @@ class HierarchyView extends ConnectionComponent {
                         />
                     </Col>
                 </Row>
-                <Row className={css(AppStyles.marginTop30)} >
+                <Row className={css(AppStyles.marginTop30)}>
                     <Col md={6}>
                         <EventTypeList eventTypes={eventTypes} />
                     </Col>
                     <Col md={6}>
                         <EventQueryList hierarchyId={hierarchy.id} />
+                    </Col>
+                </Row>
+                <Row className={css(AppStyles.marginTop30)}>
+                    <Col>
+                        <Card>
+                            <CardTitle title={"Hierarchy: " + hierarchy.name} />
+                            <CardText>
+                                <img
+                                    src={this.getHierarchyImageSource()}
+                                    width={"100%"}
+                                    alt={"Hierarchy"}
+                                    onDoubleClick={() => this.setState({
+                                        hierarchyDetails: !this.state.hierarchyDetails
+                                    })}
+                                />
+                            </CardText>
+                        </Card>
                     </Col>
                 </Row>
             </div>);
