@@ -10,7 +10,7 @@ class ListView extends Component {
         return (
             <div>
                 <Card>
-                    <CardTitle title="Hierarchies" subtitle="You can see all event query hierarchies here." />
+                    <CardTitle title="Hierarchies" subtitle="You can see all event type hierarchies here." />
                     <CardText>
                         <HierarchyList/>
                     </CardText>
