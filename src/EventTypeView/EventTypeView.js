@@ -75,7 +75,7 @@ class EventTypeView extends ConnectionComponent {
                 <Row className={css(AppStyles.marginTop30)}>
                     <Col md={12}>
                         <Card>
-                            <CardTitle title={"Feeding Queries"}/>
+                            <CardTitle title={"Inserting Queries"}/>
                             <CardText>
                                 {EventTypeView.renderEventQueryList(eventQueries)}
                             </CardText>

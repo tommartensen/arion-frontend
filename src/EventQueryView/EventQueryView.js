@@ -32,9 +32,9 @@ class EventQueryView extends ConnectionComponent {
                 <Row className={css(AppStyles.marginTop30)}>
                     <Col md={6}>
                         <Card>
-                            <CardTitle title={"Inserting Event Types"}/>
+                            <CardTitle title={"Input Event Types"}/>
                             <CardText>
-                                {EventTypeList.renderEventTypes(eventQuery.feedingTypes)}
+                                {EventTypeList.renderEventTypes(eventQuery.inputEventTypes)}
                             </CardText>
                         </Card>
                     </Col>
@@ -42,7 +42,7 @@ class EventQueryView extends ConnectionComponent {
                         <Card>
                             <CardTitle title={"Output Event Type"}/>
                             <CardText>
-                                {EventTypeList.renderEventTypes([eventQuery.outputType])}
+                                {EventTypeList.renderEventTypes([eventQuery.outputEventType])}
                             </CardText>
                         </Card>
                     </Col>
